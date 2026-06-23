@@ -2,7 +2,7 @@
 
 A retro-styled Pokédex web app that fetches live data from the [PokéAPI](https://pokeapi.co/). Search any Pokémon by name or ID, browse with PREV/NEXT, and watch the whole UI shift colors to match the Pokémon's type.
 
-![Finished Pokedex](screenshots/finished.png)
+<img width="1280" height="720" alt="ezgif-2088bd3e533f4250" src="https://github.com/user-attachments/assets/a781a16e-a9ba-4d05-a189-6507934b4011" />
 
 ---
 
