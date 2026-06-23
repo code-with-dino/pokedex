@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="pokedex" id="pokedex" style="background-color: #dc3545">
+      <!-- Top bar with lens decorations -->
+      <div class="pokedex-top">
+        <div class="blue-lens"></div>
+        <div class="small-lens" style="background-color: #ff3b30"></div>
+        <div class="small-lens" style="background-color: #ffcc00"></div>
+        <div class="small-lens" style="background-color: #4cd964"></div>
+        <div class="title">POKÉDEX</div>
+      </div>
+
+      <!-- Left screen + right stats panels -->
+      <div class="panels-container">
+        <!-- Left: sprite screen -->
+        <div class="screen-panel">
+          <div style="font-size: 9px; color: #99aab5">
+            ID: <span id="poke-id" style="color: #fff">#025</span>
+          </div>
+          <div class="pokemon-name" id="poke-name" style="color: #f8d030">
+            PIKACHU
+          </div>
+          <div
+            class="pokemon-sprite-box"
+            id="sprite-box"
+            style="background-color: #f8e880"
+          >
+            <img
+              id="poke-sprite"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+              alt="Pokemon Sprite"
+            />
+          </div>
+        </div>
+
+        <!-- Right: stats panel -->
+        <div class="stats-panel">
+          <!-- Type badges — filled dynamically -->
+          <div id="type-container" style="margin-bottom: 6px"></div>
+          <hr style="border: 2px solid #111; margin: 8px 0" />
+
+          <!-- Stat rows with visual bars -->
+          <div class="stat-line">
+            <span class="stat-label">HP</span>
+            <span class="stat-val" id="stat-hp">35</span>
+            <div class="stat-bar-bg">
+              <div
+                class="stat-bar-fill"
+                id="bar-hp"
+                style="width: 14%; background: #ff6b6b"
+              ></div>
+            </div>
+          </div>
+          <div class="stat-line">
+            <span class="stat-label">ATK</span>
+            <span class="stat-val" id="stat-atk">55</span>
+            <div class="stat-bar-bg">
+              <div
+                class="stat-bar-fill"
+                id="bar-atk"
+                style="width: 22%; background: #f1c40f"
+              ></div>
+            </div>
+          </div>
+          <div class="stat-line">
+            <span class="stat-label">DEF</span>
+            <span class="stat-val" id="stat-def">40</span>
+            <div class="stat-bar-bg">
+              <div
+                class="stat-bar-fill"
+                id="bar-def"
+                style="width: 16%; background: #4ecdc4"
+              ></div>
+            </div>
+          </div>
+          <div class="stat-line">
+            <span class="stat-label">SPD</span>
+            <span class="stat-val" id="stat-spd">90</span>
+            <div class="stat-bar-bg">
+              <div
+                class="stat-bar-fill"
+                id="bar-spd"
+                style="width: 36%; background: #a29bfe"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Flavor text fetched from species endpoint -->
+          <div class="flavor-text" id="flavor-text">
+            Stores electricity in the electric sacs on its cheeks. When it
+            releases pent-up energy, the lightning bolts can reach even the
+            ground below.
+          </div>
+        </div>
+      </div>
+
+      <!-- Prev / Next navigation -->
+      <div class="nav-row">
+        <button class="nav-btn" id="prev-btn">◀ PREV</button>
+        <div class="nav-id" id="nav-id">#025 / 1025</div>
+        <button class="nav-btn" id="next-btn">NEXT ▶</button>
+      </div>
+
+      <!-- Search bar -->
+      <div class="search-box">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Name or ID..."
+          value="pikachu"
+        />
+        <button class="search-btn" id="search-btn">GO!</button>
+      </div>
+      <div id="error-output" class="error-msg"></div>
+    </div>
+  </body>
+</html>
